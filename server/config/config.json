@@ -12,13 +12,14 @@
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "mjqrclbx",
+    "password": "ZV2ZLtMSLqDmKK1LNBB4uWLyifO8DM7G",
+    "database": "mjqrclbx",
+    "host": "baasu.db.elephantsql.com",
+    "dialect": "postgres",
+    "port": 5432
   }
 }
