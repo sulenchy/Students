@@ -7,4 +7,6 @@ module.exports = (app) => {
 
   // adding new students
   app.post('/api/students', studentsController.create);
+  app.get('/api/students', studentsController.list);
+
 };
