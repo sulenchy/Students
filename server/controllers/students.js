@@ -12,5 +12,10 @@ module.exports = {
       .then(std => res.status(200).send(std))
       .catch(error => res.status(400).send(error.message));
   },
-  
+  list(req, res) {
+    return students
+      .all()
+      .then(std => res.status(200).send(std))
+      .catch(error => res.status(400).send(error.message));
+  },
 };
