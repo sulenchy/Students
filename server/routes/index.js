@@ -14,4 +14,7 @@ module.exports = (app) => {
   // get students by id
   app.get('/api/students/:Id', studentsController.retrieve);
 
+  // update the student record
+  app.put('/api/students/:Id', studentsController.update);
+
 };

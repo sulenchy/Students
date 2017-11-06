@@ -32,4 +32,28 @@ module.exports = {
       })
       .catch(error => res.status(400).send(error.message));
   },
+
+  update(req, res) {
+    return students
+      .findById(req.params.Id, {
+        include: [{
+          model: req.body.matric_no,
+          as: 'matric',
+        }],
+      })
+      .then(std => {
+        if (!std) {
+          return res.status(400).send({
+            message: 'student Not Found',
+          });
+        }
+        return students
+          .update({
+            title: req.body.surname || students.surname,
+          })
+          .then(() => res.status(200).send(todo))  // Send back the updated todo.
+          .catch((error) => res.status(400).send(error.message));
+      })
+      .catch((error) => res.status(400).send(error.message));
+  },
 };
