@@ -18,9 +18,10 @@ module.exports = {
       .then(std => res.status(200).send(std))
       .catch(error => res.status(400).send(error.message));
   },
+
   retrieve(req, res) {
     return students
-      .findById(req.params.id)
+      .findById(req.params.Id)
       .then(std => {
         if (!std) {
           return res.status(400).send({
@@ -29,6 +30,6 @@ module.exports = {
         }
         return res.status(200).send(std);
       })
-      .catch(error => res.status(400).send(error));
+      .catch(error => res.status(400).send(error.message));
   },
 };

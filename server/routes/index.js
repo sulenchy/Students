@@ -7,7 +7,11 @@ module.exports = (app) => {
 
   // adding new students
   app.post('/api/students', studentsController.create);
+
+  // get list of all students added
   app.get('/api/students', studentsController.list);
+
+  // get students by id
   app.get('/api/students/:Id', studentsController.retrieve);
 
 };
