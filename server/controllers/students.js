@@ -18,4 +18,17 @@ module.exports = {
       .then(std => res.status(200).send(std))
       .catch(error => res.status(400).send(error.message));
   },
+  retrieve(req, res) {
+    return students
+      .findById(req.params.id)
+      .then(std => {
+        if (!std) {
+          return res.status(400).send({
+            message: 'student Not Found',
+          });
+        }
+        return res.status(200).send(std);
+      })
+      .catch(error => res.status(400).send(error));
+  },
 };
